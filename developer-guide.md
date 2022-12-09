@@ -3,15 +3,15 @@
 
 **Workflow**
 
-Use the GitFlow approach to managing our source code workflow using git. There should be two main branches: _master_ (or main), containing the code deployed to live, and _dev_,containing code that is being staged for eventual deployment. The workflow proceeds as follows: 
+The GitFlow workflow is used to manage the source code using git. With this approach, there are two main branches: _master_ (or _main_), containing the code deployed to production, and optionally, _dev_,containing code that is being staged for eventual deployment. If there is no _dev_ branch, the _master_ branch fulfills both functions. The workflow proceeds as follows: 
 
-1. When starting work on an issue, create a new local feature branch, naming it according to the following template: 
-`feature/{Github issue #, without hash symbol}_{shortened title of GitHub issue, in dash case}`.
+1. When starting work on an issue, create a new local feature branch (from the _dev_ or _master_ branch), naming it according to the following template: 
+`feature/{Github issue #, without hash symbol}_{shortened title of GitHub issue, in dash case, with the first character of each word in uppercase}`.
 
 
 2. Keep adding commits to this feature branch as necessary until your work is done, then squash the commit into one with a properly descriptive message. Squashing commits helps to keep the git history clean when the branch is merged with dev. Please do not push to the default remote until you have squashed your commits into one and are ready to submit your work for review. Therefore, make sure your repository is backed up by DropBox so that you do not lose work locally. You can also create temporary branches based on the main feature branch you are working on and push them to the default remote (name them with the prefix temp, e.g., temp/{name of branch}. Delete these temporary branches when they are no longer needed 
 
-3. When you are ready to submit your work, create a pull request for the issue against the dev branch. Name the pull request as follows: _PR: {title of GitHub issue, without hash symbol}_. Add a comment that refers to the issue number (e.g., Resolves issue #123). Add other team members as reviewers, who will test, review the code and comment if the PR is ok. Apply the tag “Review” to the PR to indicate that it’s ready to be reviewed (as opposed to PRs currently being worked on) 
+3. When you are ready to submit your work, create a pull request for the issue against the dev branch. Name the pull request as follows: _PR: {title of GitHub issue, without the hash number}_. Add a comment that refers to the issue number (e.g., Resolves issue #123). Add other team members as reviewers, who will test, review the code and comment if the PR is ok. Apply the tag “Review” to the PR to indicate that it’s ready to be reviewed (as opposed to PRs currently being worked on) 
  
 4. If there are problems with the work, the pull request will be updated to indicate what you need to make change. The “Review” tag should then be removed. Make the changes, squash any additional commit since the last review, and push to the default remote when done. 
  
